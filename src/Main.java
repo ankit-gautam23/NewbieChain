@@ -8,6 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        long startTime = System.currentTimeMillis();
+
         blockchain.add(new Block("First Block", "0"));
         System.out.println("mining first block...");
         blockchain.get(0).mineBlock(difficulty);
@@ -38,8 +40,10 @@ public class Main {
         System.out.println("Third Bloch Hash Value : "+thirdBlock.hash);
 
          */
+        long finishTime = System.currentTimeMillis();
+        long elapsedTime = (finishTime - startTime)/1000;
+        System.out.println("Execution Time : "+ Long.toString(elapsedTime) + " Seconds");
     }
-
     public static Boolean isChainValid(){
         Block currentBlock;
         Block prevBlock;
