@@ -14,7 +14,7 @@ public class Block {
         this.hash = calculateHash();
     }
     public String calculateHash(){
-        String hashValue = StringUtil.applySha256(prevHash+Long.toString(timeStamp)+data);
+        String hashValue = StringUtil.applySha256(prevHash+Long.toString(timeStamp)+Integer.toString(nonce)+data);
         return hashValue;
     }
 
